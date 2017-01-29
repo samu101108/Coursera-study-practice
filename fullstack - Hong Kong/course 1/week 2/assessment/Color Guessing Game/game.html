@@ -33,11 +33,11 @@
           <li>Do not look dev tools</li>
         </ol>
         <p>Enjoy!</p>
-        <input type="button" name="start" value="Start" onclick="play();">
+        <input type="button" name="start" value="Start" onclick="do_game();">
       </div>
     </div>
 <script>
-  function play(){
+  function do_game(){
     count = 0;
     colors = ["red","pink","orange","yellow","purple","orchid","peru","brown","indigo","navy"];
     colors.sort();
@@ -49,16 +49,23 @@
       count++;
     pickColor = prompt("I'm thinking of one of these colors:\n\n" + colors + "\n\nWhat color am I thinking of?\n");
 //            console.log(pickColor);
-    if(pickColor == thought){
-      if(count == 1){alert("Congratulations! You have guessed the color!\n\nIt took just " + count + " guess to finish the game!\n\nYou can see the colour " + thought + " in the background.\n");}
-        else if (count >= 1){alert("Congratulations! You have guessed the color!\n\nIt took " + count + " guesses to finish the game!\n\nYou can see the colour " + thought + "  in the background.\n");}
+      function check_guess(){
+
+
+        if(pickColor == thought){
+          if(count == 1){alert("Congratulations! You have guessed the color!\n\nIt took just " + count + " guess to finish the game!\n\nYou can see the colour " + thought + " in the background.\n");}
+            else if (count >= 1){alert("Congratulations! You have guessed the color!\n\nIt took " + count + " guesses to finish the game!\n\nYou can see the colour " + thought + " in the background.\n");}
+          }
+        else if(colors.indexOf(pickColor) == -1)
+          {alert("Sorry, I don't recognize your color.\n\nPlease try again.\n");}
+        else if(pickColor > thought)
+          {alert("Sorry, your guess is not correct!\n\nHint: your color is alphabeticaly higher than mine.\n");}
+        else if(pickColor < thought)
+          {alert("Sorry, your guess is not correct!\n\nHint: your color is alphabeticaly lower than mine.\n");}
+
+
       }
-    else if(colors.indexOf(pickColor) == -1)
-      {alert("Sorry, I don't recognize your color.\n\nPlease try again.\n");}
-    else if(pickColor > thought)
-      {alert("Sorry, your guess is not correct!\n\nHint: your color is alphabeticaly higher than mine.\n");}
-    else if(pickColor < thought)
-      {alert("Sorry, your guess is not correct!\n\nHint: your color is alphabeticaly lower than mine.\n");}
+      check_guess();
     }
     while(pickColor != thought);
 //Changing BG accodingly with the color I am thinking of...
