@@ -53,18 +53,22 @@
 
               </ul>
 <!-- login form -->
-              <div class="">
-                <form class="form-inline" action="index.html" method="post">
-                  <div class="form-group">
-                    <label for="email"></label>
-                    <input type="email" class="form-control" id="" placeholder="e-mail">
-                    <label for="password"></label>
-                    <input type="password" class="form-control" id="" placeholder="password">
-                    <label for="remember"></label>
-                    <input type="checkbox" class="form-control" id=""><span class="floral"> remember me</span>
-                  </div>
-                </form>
-              </div>
+<form class="form-inline text-right form-log-bar">
+  <div class="form-group">
+    <label class="sr-only" for="email">Email address</label>
+    <input type="email" class="form-control" id="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+      <label class="sr-only" for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password">
+  </div>
+  <div class="checkbox">
+      <label class="chk">
+      <input type="checkbox"> Remember me
+      </label>
+  </div>
+    <button type="submit" class="btn btn-info">Sign in</button>
+</form>
 <!-- end login form -->
             </div>
 
@@ -89,11 +93,13 @@
                    <img src="img/logo.png" class="img-responsive">
                 </div>
                 <div class="col-xs-12 col-sm-2">
-                   <a href="#reserve" class="btn btn-warning">Reservation</a>
+                  <p style="padding:40px;"></p>
+                   <a href="#book" class="btn btn-warning">Reserve table</a>
                 </div>
             </div>
         </div>
     </header>
+
 
     <div class="container">
         <div class="row row-content">
@@ -129,18 +135,18 @@
             </div>
             <div class="col-xs-12 col-sm-9">
                 <div class="media">
-                  <div class="media-left media-middle">
-                      <a href="#">
-                      <img class="media-object img-thumbnail"
-                       src="img/buffet.png" alt="buffet">
-                      </a>
-                  </div>
                   <div class="media-body">
-                    <h2 class="media-heading">Weekend Grand Buffet</h2>
+                    <h2 class="media-heading">Weekend Grand Buffet <span class="label label-danger">New</span> </h2>
                     <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing
                       appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft
                       drinks. All for just $19.99 per person </p>
                     <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+                  </div>
+                  <div class="media-left media-middle">
+                    <a href="#">
+                      <img class="media-object img-thumbnail"
+                      src="img/buffet.png" alt="buffet">
+                    </a>
                   </div>
                 </div>
             </div>
@@ -176,24 +182,74 @@
 
 <div class="container">
   <div class="row">
-      <div class="col-xs-12 col-sm-9" style="border: 1px solid black">
-        <form class="form-horizontal" role="form" action="" method="">
+    <div class="col-xs-12 col-sm-3">
+        <h3>Reserve a Table</h3>
+    </div>
+      <div class="col-xs-12 col-sm-9">
+          <form class="">
+            <div class="form-group">
+              <label for="reservation" class="reserve-form-size">Number of Guests</label>
+              <label class="radio-inline">
+                <input type="radio" name="reservation" id="inlineRadio1" value="option1"> 1
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="reservation" id="inlineRadio2" value="option2"> 2
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="reservation" id="inlineRadio3" value="option3"> 3
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="reservation" id="inlineRadio1" value="option1"> 4
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="reservation" id="inlineRadio1" value="option1"> 5
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="reservation" id="inlineRadio1" value="option1"> 6
+              </label>
+            </div>
+          </form>
+
+            <div class="form-group">
+              <form class="form-inline">
+                <div class="form-group">
+                <label for="reservation" class="reserve-form-size has-feedback">Date and Time</label>
+                  <label class="sr-only" for="date">In which date?</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">Date</div>
+                    <input type="date" class="form-control has-feedback" id="date">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="sr-only" for="date">What time?</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">Time</div>
+                    <input type="time" class="form-control" id="date">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-time"></span></div>
+                  </div>
+                </div>
+              </form>
+            </div>
 
           <div class="form-group">
-            <div class="">
-                <input type="radio" name="chair" value="1"> 1
-                <input type="radio" name="chair" value="2"> 2
-                <input type="radio" name="chair" value="3"> 3
-                <input type="radio" name="chair" value="5"> 4
-                <input type="radio" name="chair" value="4"> 5
-                <input type="radio" name="chair" value="6"> 6
-            </div>
+            <label for="confirm" class="sr-only">Confirm</label>
+            <button  id="book" class="btn btn-primary reserve-form-button" type="button" name="button">Reserve</button>
           </div>
 
-        </form>
+
+      <div class="alert alert-warning alert-dismissible" role="alert">
+        <!-- alert-success alert-info alert-danger alert-warning etc. -->
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Warning::</strong> Please <a class="tel" href="tel:+85212345678">call</a> us to reserve more than six guests.
+      </div>
+
       </div>
   </div>
 </div>
+
+
 
     <footer>
         <div class="container">
