@@ -84,3 +84,13 @@ border-right: none;
 .input-group{margin-right: 80px;}
 input#date.form-control{width: 148px;}
 input#time.form-control{width: 100px;}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.affix {
+    top:100px;
+}
