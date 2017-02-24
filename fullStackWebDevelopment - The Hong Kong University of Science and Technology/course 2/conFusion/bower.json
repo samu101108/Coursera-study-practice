@@ -1,0 +1,27 @@
+{
+  "name": "conFusion",
+  "homepage": "https://github.com/samu101108/Coursera-study-practice",
+  "authors": [
+    "Barbosa S. A. <samu101108@gmail.com>"
+  ],
+  "description": "Coursera course",
+  "main": "index.html",
+  "keywords": [
+    "ConFusion",
+    "Restaurant"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "angular": "angularjs#^1.6.2"
+  }
+}

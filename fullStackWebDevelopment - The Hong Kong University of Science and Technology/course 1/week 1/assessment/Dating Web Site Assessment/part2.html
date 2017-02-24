@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="author" content="Samuel Barbosa">
+	<title>The Dating Website</title>
+  <style media="screen">
+    fieldset{
+      background-color: lightyellow;
+      border: 10px solid yellow;
+      margin-bottom: 10px;
+      width: 720px;
+    }
+    label{
+      width: 180px;
+      display: inline-block;
+      text-align: right;
+      vertical-align: text-top;
+      margin-bottom: 0.5rem;
+    }
+    input[type="radio"] + label, input[type="checkbox"] + label {
+       width: auto;
+       margin-right: 1rem;
+    }
+    textarea{width:360px;height:50px;}
+    .labelRange {
+      display: inline-block;
+      width: 80px;
+      text-align: center;
+      background-color: #c35e5e;
+    }
+    .high{background-color: #5e88c3;}
+
+  </style>
+</head>
+<body>
+  <h1>Please fill the form to start dating!</h1>
+<form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post">
+<fieldset>
+    <legend>Your Face</legend>
+    <label for="avatar">Your Image:</label>
+    <input type="file" id="avatar" name="avatar" required></br>
+    <label for="preview">Image Preview: </label>
+    <img src="" alt="" name="preview" id="preview">
+</fieldset>
+
+<fieldset>
+    <legend>Your General Details</legend>
+    <label for="Name">Name:</label>
+    <input name="Name" id="Name" type="text" required></br>
+    <label for="gender">Gender:</label>
+    <input name="gender" id="male" type="radio" value="male" required/>Male<input type="radio" name="gender" value="female" id="female" required/>Female</br>
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age" required></br>
+    <label for="birth">Date of birth:</label>
+    <input name="birth" id="birth" type="date"></br>
+    <label for="colour">Favorite Colour:</label>
+    <input name="colour" id="colour" type="color"></br>
+    <label for="country">Which Country: </label>
+    <select name="country" id="country">
+        <option value="">Select a Country</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Australia">Australia</option>
+        <option value="España">España</option>
+        <option value="Brasil">Brasil</option>
+        <option value="France">France</option>
+        <option value="Portugal">Portugal</option>
+    </select>
+</fieldset>
+
+<fieldset>
+  <legend>You Indicators</legend>
+     <label for="height">Height:</label>
+     <span class="labelRange">Short</span>
+     <input type="range" id="height" name="height" min="0" max="100">
+     <span class="labelRange high">Tall</span>
+     <br>
+     <label for="salary">Salary:</label>
+     <span class="labelRange">Poor</span>
+     <input type="range" id="salary" name="salary" min="0" max="100">
+     <span class="labelRange high">Rich</span>
+</fieldset>
+<fieldset>
+    <legend>Your Contact Information</legend>
+    <label for="email">Email: </label>
+    <input name="email" id="email" type="email" required></br>
+    <label for="mobile">Mobile: </label>
+    <input name="mobile" id="mobile" type="tel"></br>
+    <label for="address">Address: </label>
+    <textarea name="address" id="address"></textarea></br>
+    <label for="method">Method to contact you:</label>
+    <input type="checkbox" id="method-email" name="method" value="email">
+    <label for="method-email">Email</label>
+    <input type="checkbox" id="method-whatsapp" name="method" value="whatsapp">
+    <label for="method-whatsapp">Whatsapp</label>
+    <input type="checkbox" id="method-in-app-chat" name="method" value="in-app-chat">
+    <label for="method-in-app-chat">In-app chat</label>
+</fieldset>
+
+<input type="submit" id="send" name="send" value="Submit">
+
+</form>
+</body>
+</html>
